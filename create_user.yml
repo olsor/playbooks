@@ -1,0 +1,14 @@
+---
+- name: Ansible Create user
+  hosts: web
+  remote_user: ubuntu
+  tasks:
+    - name: Add the user 'myuser' with a specific uid and a primary group of 'sudo'
+      ansible.builtin.user:
+        name: myuser
+        comment: myuser
+        uid: 1053
+        group: sudo
+        password: '$6$qOM035AeyI2HeY2Q$srtPvLEius2E5ysF88Yimre0S9Xo9kJLUBrOKi1rfi.bdT8HjA.t67Uq1n2HxEl8xoiHOWwtsucBZ/kujSdtO1'
+        createhome: yes
+        home: /home/myuser
